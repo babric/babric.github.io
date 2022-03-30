@@ -1,0 +1,11 @@
+title: Babric
+baseurl: ""
+url: "https://babric.github.io"
+
+theme: minima
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - serve.sh
+  - jsconfig.json

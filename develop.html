@@ -1,0 +1,25 @@
+---
+layout: page
+title: develop
+permalink: /develop/
+---
+
+<h3>Latest Versions</h3>
+
+<noscript style="color:red">You need Javascript to show latest versions</noscript>
+
+<div class="fabric-component" id="latest-versions">
+    <template>
+        <p>Minecraft Version:
+            <select style="min-width: 200px;">
+            </select>
+        </p>
+        <div style="margin-bottom: 15px;">
+            <pre><code class="properties"></code></pre>
+        </div>
+        <h4>Automatically update mappings</h4>
+        <p>Mappings can be auto updated by using the following command. See the <a href="https://fabricmc.net/wiki/tutorial:migratemappings">wiki page</a> for more help.</p> <code class="copy-code" id="migrateMappings"></code>
+    </template>
+</div>
+
+<script type="module" src="{{ site.baseurl }}{% link develop.mjs %}"></script>
