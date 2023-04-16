@@ -11,16 +11,12 @@ function lazy(name: string): () => Promise<Module> {
 }
 
 const Installer = lazy("Installer");
-const MCUpdater = lazy("MCUpdater");
-const Technic = lazy("Technic");
 const Server = lazy("Server");
 const Versions = lazy("Versions");
 const Documentation = lazy("Documentation");
 
 let Components: Record<string, () => Promise<Module>> = {
     Installer,
-    MCUpdater,
-    Technic,
     Server,
     Versions,
     Documentation
