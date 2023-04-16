@@ -13,11 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Fabric
-email: kontakt@asie.pl
-description: The home of the Fabric mod development toolchain.
+title: Babric
+description: The home of the Babric mod development toolchain.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://fabricmc.net" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://babric.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown

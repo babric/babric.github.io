@@ -9,21 +9,12 @@ This page contains a range of resources to help you create a new mod or maintain
 
 ### Getting started
 
-* If you would like to create a new mod please see the [wiki](http://fabricmc.net/wiki/start).
-
-* An up-to date template mod can be found on [github](https://github.com/FabricMC/fabric-example-mod) or you can try out the new [template mod generator](./template).
-
-* If you need some extra help we have a number of mod development channels on our [Discord](https://discord.gg/v6v4pMv).
+* An up-to date template mod can be found on [github](https://github.com/babric/fabric-example-mod).
 
 ### Latest Versions
 
 <noscript style="color:red">You need Javascript to show the latest Versions</noscript>
 <div class="fabric-component" data-component="Versions"></div>
-
-### Online documentation
-
-<noscript style="color:red">You need Javascript to show the documentation links</noscript>
-<div class="fabric-component" data-component="Documentation"></div>
 
 {% assign cacheBust = site.time | date:'?v=%s' %}
 <script type="text/javascript" src="{{ "/scripts/main.js" | relative_url | append: cacheBust }}"></script>

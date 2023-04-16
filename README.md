@@ -1,6 +1,6 @@
-# fabricmc.net
+# babric.github.io
 
-This repository contains the source code and content for [https://fabricmc.net/](https://fabricmc.net/). Jekyll is used as the static site generator. A small TypeScript Svelte project located in /scripts powers the interactive parts of the site.
+This repository contains the source code and content for [https://babric.github.io/](https://babric.github.io/). Jekyll is used as the static site generator. A small TypeScript Svelte project located in /scripts powers the interactive parts of the site.
 
 ## License
 
@@ -63,5 +63,5 @@ Then open http://localhost:4000 in your browser of choice. The site should updat
 Used to build and run a production like server.
 
 * `docker build -f Dockerfile.dev -t fabricmc-net .`
-* `docker run -p 8080:80 fabricmc.net`
+* `docker run -p 8080:80 babric.github.io`
 * `http://localhost:8080/`

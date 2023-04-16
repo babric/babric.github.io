@@ -13,13 +13,11 @@ function lazy(name: string): () => Promise<Module> {
 const Installer = lazy("Installer");
 const Server = lazy("Server");
 const Versions = lazy("Versions");
-const Documentation = lazy("Documentation");
 
 let Components: Record<string, () => Promise<Module>> = {
     Installer,
     Server,
-    Versions,
-    Documentation
+    Versions
 };
 
 function initComponents() {
@@ -50,3 +48,4 @@ function initComponents() {
 document.addEventListener("DOMContentLoaded", initComponents);
 
 export {}
+

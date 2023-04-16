@@ -3,14 +3,11 @@
         getGameVersions,
         getYarnVersions,
         getLoaderVersions,
-        getApiVersions,
-        isApiVersionvalidForMcVersion
     } from "./Api";
 
     let minecraftVersion: string | undefined;
     let yarnVersion: string;
     let loaderVersion: string;
-    let apiVersion: string;
 
     let gameVersions = getGameVersions().then((versions) => {
         minecraftVersion = versions.find((v) => v.stable)!.version
@@ -23,10 +20,8 @@
     });
 
     const yarnVersions = getYarnVersions()
-    const apiVersions = getApiVersions();
 
     $: yarnVersions.then(versions => yarnVersion = versions.find(v => v.gameVersion == minecraftVersion)?.version || "unknown")
-    $: apiVersions.then(versions => apiVersion = versions.filter(v => isApiVersionvalidForMcVersion(v, minecraftVersion)).pop()!)
 </script>
 
 {#await gameVersions}
@@ -46,9 +41,6 @@
 minecraft_version={minecraftVersion}
 yarn_mappings={yarnVersion}
 loader_version={loaderVersion}
-
-#Fabric api
-fabric_version={apiVersion}
         </code></pre>
       </div>
 
@@ -58,8 +50,6 @@ fabric_version={apiVersion}
       <code class="copy-code">
         gradlew migrateMappings --mappings "{yarnVersion}"
       </code>
-
-      <p>Note: The fabric-api version may not be the correct version for the given Minecraft version in some situations. Check the <a href="https://minecraft.curseforge.com/projects/fabric/files">CurseForge</a> page if you run into issues.</p>
 {:catch error}
     <p style="color: red">Error: {error.message}</p>
     <p>

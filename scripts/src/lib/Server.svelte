@@ -6,9 +6,9 @@
     let loaderVersion: string | undefined;
     let installerVersion: string | undefined;
 
-    $: serverJarUrl = `https://meta.fabricmc.net/v2/versions/loader/${gameVersion}/${loaderVersion}/${installerVersion}/server/jar`;
+    $: serverJarUrl = `https://meta.babric.glass-launcher.net/v2/versions/loader/${gameVersion}/${loaderVersion}/${installerVersion}/server/jar`;
     $: serverJarFilename = `fabric-server-mc.${gameVersion}-loader.${loaderVersion}-launcher.${installerVersion}.jar`
-    $: installerJarUrl = `https://maven.fabricmc.net/net/fabricmc/fabric-installer/${installerVersion}/fabric-installer-${installerVersion}.jar`;
+    $: installerJarUrl = `https://maven.glass-launcher.net/babric/babric/fabric-installer/${installerVersion}/fabric-installer-${installerVersion}.jar`;
 
     let versions = Promise.all([getGameVersions(), getLoaderVersions(), getInstallerVersions()])
       .then(([gameVersions, loaderVersions, installerVersions]) => {

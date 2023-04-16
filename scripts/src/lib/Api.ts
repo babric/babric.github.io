@@ -28,8 +28,8 @@ export interface YarnVersion {
 }
 
 // Do not use these fallback servers to interact with our web services. They can and will be unavailable at times and only support limited throughput.
-const META = ["https://meta.fabricmc.net", "https://meta2.fabricmc.net"];
-const MAVEN = ["https://maven.fabricmc.net", "https://maven2.fabricmc.net"];
+const META = ["https://meta.babric.glass-launcher.net"];
+const MAVEN = ["https://maven.glass-launcher.net/babric"];
 
 export async function getInstallerVersions() {
     return getJson<InstallerVersion[]>(META, "/v2/versions/installer");
@@ -65,17 +65,8 @@ export async function getLatestYarnVersion(gameVersion: string): Promise<YarnVer
     ))[0];
 }
 
-export function getApiVersions(): Promise<string[]> {
-    return getMavenVersions("/net/fabricmc/fabric-api/fabric-api/maven-metadata.xml");
-}
-
 export function getKotlinAdapterVersions(): Promise<string[]> {
     return getMavenVersions("/net/fabricmc/fabric-language-kotlin/maven-metadata.xml");
-}
-
-export async function getApiVersionForMinecraft(minecraftVersion: string): Promise<string> {
-    const apiVersions = await getApiVersions();
-    return apiVersions.filter(v => isApiVersionvalidForMcVersion(v, minecraftVersion)).pop()!;
 }
 
 export function isApiVersionvalidForMcVersion(apiVersion: string, mcVersion: string | undefined) : boolean {
